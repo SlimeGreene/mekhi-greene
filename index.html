@@ -1120,6 +1120,12 @@
     <p>Sugar Land, TX &nbsp;&middot;&nbsp; Open to Opportunities</p>
     <p>Designed &amp; built by me.</p>
   </footer>
-
+<script>
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('touchend', () => {
+      setTimeout(() => link.blur(), 800);
+    });
+  });
+</script>
 </body>
 </html>
