@@ -354,24 +354,25 @@ section, .container {
       overflow: hidden;
     }
 
-    .stat-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 3px;
-      height: 100%;
-      background: var(--red);
-    }
+.stat-card {
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 1.25rem; /* Slightly reduced padding to give text more width room */
+  position: relative;
+  overflow: hidden;
+  word-wrap: break-word;     /* Forces long words/codes to wrap */
+  overflow-wrap: break-word; /* Prevents text from bleeding out horizontally */
+}
 
-    /* Stats summary structural updates to Formula 1 Bold */
-    .stat-number {
-      font-family: 'Formula1', sans-serif;
-      font-weight: 700;
-      font-size: 2.25rem;
-      color: var(--white);
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
+/* Update the target block to safely adjust font bounds */
+.stat-number {
+  font-family: 'Formula1', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.25rem); /* Makes the large metrics dynamically scalable */
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  overflow-wrap: break-word;
+}
 
     .stat-label {
       font-size: 0.8rem;
@@ -393,13 +394,14 @@ section, .container {
 
     .exp-card:hover { border-color: rgba(192,57,43,0.4); }
 
-    .exp-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 2rem;
-      margin-bottom: 0.5rem;
-    }
+.exp-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap; /* Crucial: Allows date tags to move below titles if space runs out */
+}
 
     /* Swapped target tracking header blocks to Formula 1 Bold */
     .exp-title {
@@ -409,14 +411,26 @@ section, .container {
       color: var(--white);
     }
 
-    .exp-date {
-      font-size: 0.8rem;
-      color: var(--red);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      padding-top: 0.3rem;
-    }
+.exp-date {
+  font-size: 0.8rem;
+  color: var(--red);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: normal; /* Changed from 'nowrap' to allow natural stacking when cramped */
+  padding-top: 0.3rem;
+  text-align: right;
+  /* Media query adjustment if things look cramped on mobile viewports */
+@media (max-width: 600px) {
+  .exp-header {
+    flex-direction: column; /* Forces layout to stack cleanly on smaller screens */
+    gap: 0.25rem;
+  }
+
+  .exp-date {
+    text-align: left;
+    padding-top: 0;
+  }
+}
 
     .exp-company {
       font-size: 0.9rem;
@@ -514,13 +528,14 @@ section, .container {
       gap: 1.5rem;
     }
 
-    .cert-card {
-      background: var(--card-bg);
-      border: 1px solid rgba(255,255,255,0.07);
-      padding: 2rem;
-      transition: transform 0.2s, border-color 0.2s;
-      position: relative;
-    }
+ .cert-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 2rem;
+  transition: transform 0.2s, border-color 0.2s;
+  position: relative;
+  overflow-wrap: break-word; /* Fixes text wrapping for ongoing/in-progress tags */
+}
 
     .cert-card:hover {
       transform: translateY(-4px);
@@ -706,7 +721,7 @@ section, .container {
   }
   .nav-links a { 
     font-size: 0.75rem; 
-    letter-spacing: 0.05em; 
+    letter-spacing: 0.05rem; 
   }
 }
 
