@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Mekhi Greene</title>
-  <link rel="icon" type="image/png" href="favicon_rounded.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <title>Mekhi Greene</title>  
+  <link rel="icon" type="image/png" href="/mekhi-greene/favicon_rounded.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/mekhi-greene/apple-touch-icon.png"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;1,400;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
   
@@ -57,12 +56,12 @@
     }
 
     /* Global Headings Reset Override to Formula 1 Bold */
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3, h4, h5, h6, .section-title, .exp-title, .edu-degree {
       font-family: 'Formula1', sans-serif;
       font-weight: 700;
     }
 
-/* ── NAV ── */
+    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -76,7 +75,7 @@
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
-    /* Your name "Mekhi Greene" updated to Formula 1 Bold */
+    /* Your name "Mekhi Greene" forced dynamically to Formula 1 Bold */
     .nav-logo {
       font-family: 'Formula1', sans-serif;
       font-weight: 700;
@@ -93,7 +92,7 @@
       list-style: none;
     }
 
-    /* All other navigation items updated to Formula 1 Regular */
+    /* Navigation item links forced dynamically to Formula 1 Regular */
     .nav-links a {
       font-family: 'Formula1', sans-serif;
       color: var(--light-gray);
@@ -694,8 +693,8 @@
 <body>
 
   <!-- NAV -->
-  <nav>
-    <a class="nav-logo" href="#">Mekhi Greene</a>
+<nav>
+    <a class="nav-logo" href="/mekhi-greene/">Mekhi Greene</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
