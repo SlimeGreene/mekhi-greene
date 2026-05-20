@@ -34,16 +34,29 @@
       --card-bg: #1a1a1a;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 0;
-    }
+   html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
-    body {
-      overscroll-behavior: none;
-    }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Barlow', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 100%;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+}
 
     /* Core Body Base Override: Keeping Barlow for body copy */
     body {
@@ -119,16 +132,17 @@
       overflow: hidden;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -30%;
-      right: -10%;
-      width: 650px;
-      height: 650px;
-      background: radial-gradient(circle, rgba(192,57,43,0.18) 0%, transparent 70%);
-      pointer-events: none;
-    }
+ .hero::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 650px;
+  max-width: 100%; /* Prevents it from breaking mobile width boundaries */
+  height: 650px;
+  background: radial-gradient(circle, rgba(192,57,43,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
 
     .hero-text { position: relative; z-index: 2; }
 
