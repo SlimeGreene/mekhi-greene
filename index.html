@@ -9,6 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
   <style>
+    @font-face {
+  font-family: 'Formula1';
+  src: url('Formula1-Bold_web_0.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Formula1';
+  src: url('Formula1-Regular_web_0.ttf') format('truetype');
+  font-weight: 400;
+}
     :root {
       --black: #0d0d0d;
       --white: #f7f4ef;
@@ -54,14 +65,15 @@
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
-    .nav-logo {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.4rem;
-      letter-spacing: 0.01em;
-      color: var(--white);
-      text-decoration: none;
-      white-space: nowrap;
-    }
+   .nav-logo {
+  font-family: 'Formula1', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.01em;
+  color: var(--white);
+  text-decoration: none;
+  white-space: nowrap;
+}
 
     .nav-links {
       display: flex;
@@ -116,13 +128,14 @@
       margin-bottom: 1.25rem;
     }
 
-    .hero-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(3.5rem, 6vw, 5.5rem);
-      line-height: 1.05;
-      color: var(--white);
-      margin-bottom: 1.5rem;
-    }
+ .hero-name {
+  font-family: 'Formula1', sans-serif;
+  font-weight: 700;
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
 
     .hero-name em {
       font-style: italic;
