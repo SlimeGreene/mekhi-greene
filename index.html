@@ -68,11 +68,29 @@ body {
       overflow-x: hidden;
     }
 
-    /* Global Headings Reset Override to Formula 1 Bold */
-    h1, h2, h3, h4, h5, h6, .section-title, .exp-title, .edu-degree {
-      font-family: 'Formula1', sans-serif;
-      font-weight: 700;
-    }
+/* Global Headings Reset & Typography Override */
+h1, h2, h3, h4, h5, h6, 
+.section-title, .exp-title, .edu-degree {
+  font-family: 'Formula1', sans-serif;
+  font-weight: 700;
+  /* Prevents long strings or URLs from breaking your layout */
+  overflow-wrap: break-word; 
+}
+
+/* Optional: Keep hyphens ONLY if you explicitly want line-break hyphenation on larger screens */
+h1, h2, h3, .section-title {
+  /* hyphens: auto; */ /* Uncomment if you test it and like the look! */
+}
+
+    /* Keeps the desktop layout tightly grouped like version 6, even on huge monitors */
+section, .container {
+  max-width: 1200px; 
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 0 20px; /* Prevents content from touching edge of screen on tablet/mobile */
+  box-sizing: border-box;
+}
 
     /* ── NAV ── */
     nav {
