@@ -124,7 +124,23 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       transition: color 0.2s;
-    }
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--red-dark);
+  transition: width 0.2s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
 
     .nav-links a:hover { color: var(--white); }
 
