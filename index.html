@@ -1121,6 +1121,9 @@
     <p>Designed &amp; built by me.</p>
   </footer>
 <script>
+  .nav-links a:active {
+  color: var(--red-dark);
+}
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('touchend', () => {
       setTimeout(() => link.blur(), 800);
