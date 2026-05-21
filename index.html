@@ -149,6 +149,13 @@
 .nav-links a:active {
   color: var(--red-dark);
 }
+    .month-full { display: none; }
+.month-short { display: inline; }
+
+@media (max-width: 768px) {
+  .month-full { display: inline; }
+  .month-short { display: none; }
+}
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
@@ -932,7 +939,9 @@
           <div class="stat-label">Certifications (2 earned, 1 in progress)</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">Dec</div>
+          <div class="stat-number">
+  <span class="month-short">Dec</span>
+  <span class="month-full">December</span>
           <div class="stat-label">&rsquo;25 TTU Graduate</div>
         </div>
         <div class="stat-card">
